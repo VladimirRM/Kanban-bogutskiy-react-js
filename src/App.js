@@ -11,6 +11,12 @@ const initialTasks = [
 const taskStatuses = ["todo", "progress", "review", "done"];
 function App() {
   const [tasks, setTasks] = useState(initialTasks);
+const onStatusChange = (id,newStatus)=>{
+
+
+}
+
+
   return (
     <div className="container">
       <div className="row">
@@ -20,6 +26,7 @@ function App() {
             tasks={tasks}
             status={status}
             statuses={taskStatuses}
+            onStatusChange={onStatusChange}
           />
         ))}
       </div>

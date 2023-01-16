@@ -1,7 +1,6 @@
 import React from "react";
 
 const Column = (props) => {
-  console.log(props.tasks);
   return (
     <div className="col">
       <h3>{props.status}</h3>
@@ -17,6 +16,7 @@ const Column = (props) => {
                 className="form-select"
                 aria-label="Default select example"
                 defaultValue={props.status}
+                onChange={(e) => props.onStatusChange(task.id, e.target.value)}
               >
                 {props.statuses.map((status) => (
                   <option key={status} value={status}>
