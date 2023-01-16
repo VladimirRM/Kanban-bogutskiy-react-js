@@ -11,11 +11,11 @@ const initialTasks = [
 const taskStatuses = ["todo", "progress", "review", "done"];
 function App() {
   const [tasks, setTasks] = useState(initialTasks);
-const onStatusChange = (id,newStatus)=>{
-
-
-}
-
+  const onStatusChange = (id, newStatus) => {
+    setTasks(
+      tasks.map((task) => (task.id === id ? { task, status: newStatus } : task))
+    );
+  };
 
   return (
     <div className="container">
