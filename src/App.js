@@ -18,9 +18,14 @@ function App() {
     );
   };
 
+
+  const onCreateTask =(task)=>{
+        setTasks([...tasks,{...task,id:Math.random(),status:'todo'}])
+  }
+
   return (
     <div className="container">
-      <CreateTaskForm />
+      <CreateTaskForm  onSubmit={onCreateTask}/>
       <div className="row">
         {taskStatuses.map((status) => (
           <Column

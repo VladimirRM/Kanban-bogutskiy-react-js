@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 
-function CreateTaskForm() {
+function CreateTaskForm(props) {
   const [title, setTitle] = useState("");
   const [priority, setPriority] = useState(1);
 
   const onSubmit =()=>{
     setTitle('')
     setPriority(1)
+    props.onSubmit({title,priority})
   }
   return (
     <div>
