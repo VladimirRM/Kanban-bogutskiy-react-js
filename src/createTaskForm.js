@@ -1,27 +1,38 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 
 function CreateTaskForm() {
-
-    const [title,setTitle]=useState('')
-    const [priority,setPriority]=useState(1)
+  const [title, setTitle] = useState("");
+  const [priority, setPriority] = useState(1);
   return (
-    <form>
+    <div>
       <div className="mb-3">
         <label htmlFor="title" className="form-label">
           Title
         </label>
-        <input type="text" className="form-control" id="title" value={title} onChange={e=>setTitle(e.target.value)} />
+        <input
+          type="text"
+          className="form-control"
+          id="title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
       </div>
       <div className="mb-3">
         <label htmlFor="priority" className="form-label">
           Priority
         </label>
-        <input type="text" className="form-control" id="title" />
+        <input
+          type="text"
+          className="form-control"
+          id="title"
+          value={priority}
+          onChange={(e) => setPriority(e.target.value)}
+        />
       </div>
       <button type="submit" className="btn btn-primary">
         Submit
       </button>
-    </form>
+    </div>
   );
 }
 
