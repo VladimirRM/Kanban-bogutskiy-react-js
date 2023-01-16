@@ -10,7 +10,7 @@ function CreateTaskForm() {
         <label htmlFor="title" className="form-label">
           Title
         </label>
-        <input type="text" className="form-control" id="title" />
+        <input type="text" className="form-control" id="title" value={title} onChange={e=>setTitle(e.target.value)} />
       </div>
       <div className="mb-3">
         <label htmlFor="priority" className="form-label">
