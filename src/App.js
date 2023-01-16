@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Column from "./Column";
+import CreateTaskForm from "./createTaskForm";
 
 const initialTasks = [
   { id: 1, title: "Task-1", status: "todo", priority: 1 },
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <div className="container">
+      <CreateTaskForm />
       <div className="row">
         {taskStatuses.map((status) => (
           <Column
