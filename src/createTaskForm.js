@@ -3,6 +3,11 @@ import React, { useState } from "react";
 function CreateTaskForm() {
   const [title, setTitle] = useState("");
   const [priority, setPriority] = useState(1);
+
+  const onSubmit =()=>{
+    setTitle('')
+    setPriority(1)
+  }
   return (
     <div>
       <div className="mb-3">
@@ -29,9 +34,7 @@ function CreateTaskForm() {
           onChange={(e) => setPriority(e.target.value)}
         />
       </div>
-      <button type="submit" className="btn btn-primary">
-        Submit
-      </button>
+      <button className="btn btn-primary" onClick={onSubmit}>Submit</button>
     </div>
   );
 }
